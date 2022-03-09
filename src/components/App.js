@@ -6,9 +6,8 @@ import Navbar from './Navbar'
 import NFTGallery from './NFTGallery'
 import Marketplace from './Marketplace'
 
-
-const ipfsClient = require('ipfs-http-client')
-const ipfs = ipfsClient({ host: 'ipfs.infura.io', port: 5001, protocol: 'https' }) // leaving out the arguments will default to these values
+const baseIPFS = 'https://gateway.pinata.cloud/ipfs/Qmch4oTFQXsQirstxXsbCqTkrg1RFqYaSfDnL1nE1zrHVv/'
+const mintPrice = 10000000000000000
 
 class App extends Component {
   async startWeb3() {
@@ -53,16 +52,39 @@ class App extends Component {
         this.setState({'accountSNFTs': [...this.state.accountSNFTs, accountSNFT]})
       }
 
+      let totalSuply = await nfTicket.methods.totalSupply().call()
+      this.setState({totalSuply})
+
       this.setState({'loading': false})
+
     }else{
       alert('Wrong network')
     }
+  }
+
+  mintNFT = () => {
+    this.state.nfTicket.methods.mint(
+      this.state.account,
+      (baseIPFS + (parseInt(this.state.totalSuply) + 1) + '.png')
+    ).send({ from: this.state.account, value: mintPrice}).on('transactionHash', (hash) => {
+      this.setState({ loading: false })
+      // this.setState({'accountSNFTs': [...this.state.accountSNFTs, img_url]})
+    }).catch((e) => {
+      if(e.code === 4001){
+        alert('Transaction rejected')
+      }else{
+        console.log(e)
+        alert('Something went wrong')
+      }
+      this.setState({ loading: false })
+    })
   }
 
   constructor(props) {
     super(props)
     this.state = {
       account: '',
+      totalSuply: 0,
       nfTicket: null,
       accountSNFTs: [],
       loading: true
@@ -78,7 +100,7 @@ class App extends Component {
         { this.state.loading
           ? <div id="loader" className="text-center mt-5"><p>Loading...</p></div>
           : <div className='container mx-auto'>
-              <Marketplace/>
+              <Marketplace mintNFT={this.mintNFT} />
               <NFTGallery
                 accountSNFTs={this.state.accountSNFTs}
               />

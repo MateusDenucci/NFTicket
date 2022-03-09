@@ -18,7 +18,7 @@ class Marketplace extends Component {
                         </div>
                         <div class="pb-5">
                             <div class="d-flex justify-content-center">
-                                <a class="btn btn-success text-white">Mintar agora</a>
+                                <button class="btn btn-success text-white" onClick={this.props.mintNFT}>Mintar agora</button>
                             </div>
                         </div>
                     </div>

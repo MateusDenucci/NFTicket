@@ -9,10 +9,15 @@ contract NFTicket is ERC721Full{
   
   constructor() ERC721Full('NFTicket', 'NFTicket') public {}
 
-  function mint(address _to, string memory _tokenURI) public returns(bool){
+
+  function mint(address _to, string memory _tokenURI) public payable returns(bool){
     uint _tokenID = totalSupply() + 1;
     _mint(_to, _tokenID);
     _setTokenURI(_tokenID, _tokenURI);
+
+    address payable companyAccount = 0x5024F0E2E991f76f74f905b650408a3d7b40B88D;
+
+    address(companyAccount).transfer(msg.value);
 
     return true;
   }
