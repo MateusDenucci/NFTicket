@@ -5,7 +5,7 @@ import NFTicket from '../abis/NFTicket.json'
 import Navbar from './Navbar'
 import NFTGallery from './NFTGallery'
 import Marketplace from './Marketplace'
-import Main from './Main'
+import Hero from './Hero'
 
 const baseIPFS = 'https://gateway.pinata.cloud/ipfs/QmULbt2g6DRGwhtY1ntwE9wdw7f7dteZfkxefUrhom3aid/'
 const mintPrice = 10000000000000000
@@ -106,12 +106,12 @@ class App extends Component {
         <Navbar account={this.state.account} startWeb3={this.startWeb3}/>
         { this.state.loading
           ? <div id="loader" className="text-center mt-5"><p>Loading...</p></div>
-          : <div className='container mx-auto'>
+          : <div>
+              <Hero />
               <Marketplace mintNFT={this.mintNFT} />
               <NFTGallery
                 accountSNFTs={this.state.accountSNFTs}
               />
-              {/* <Main /> */}
             </div>
         }
       </div>
