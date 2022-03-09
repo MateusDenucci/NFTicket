@@ -15,9 +15,9 @@ contract NFTicket is ERC721Full{
     _mint(_to, _tokenID);
     _setTokenURI(_tokenID, _tokenURI);
 
-    address payable companyAccount = 0x5024F0E2E991f76f74f905b650408a3d7b40B88D;
+    address payable companyAccount = 0x2C3ae4cA96Fe5f85dBf8015F976222b6dbF3127a;
 
-    address(companyAccount).transfer(msg.value);
+    companyAccount.transfer(msg.value);
 
     return true;
   }

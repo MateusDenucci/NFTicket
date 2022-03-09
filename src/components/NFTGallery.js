@@ -5,7 +5,7 @@ class NFTGallery extends Component {
   render() {
     return (
         <div className="container mt-2">
-          <h2>Seus Ingressos:</h2>
+          <h2>Seus NFTs:</h2>
           <div className="row">
             { this.props.accountSNFTs.map((accountSNFT, key) => {
               return(

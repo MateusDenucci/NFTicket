@@ -39,8 +39,13 @@ class App extends Component {
 
     const networkId = await web3.eth.net.getId()
     const networkData = NFTicket.networks[networkId]
-    if(networkData){
-      var nfTicket = new web3.eth.Contract(NFTicket.abi, networkData.address)
+    if(networkData || networkId === 4){
+      let nfTicket = 0
+      if(networkId === 4){
+        nfTicket = new web3.eth.Contract(NFTicket.abi, '0x2d010e127ce8688fc3c827c5ba08664d96f32573')
+      }else{
+        nfTicket = new web3.eth.Contract(NFTicket.abi, networkData.address)
+      }
       
       this.setState({nfTicket})
 
