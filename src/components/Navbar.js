@@ -4,29 +4,61 @@ class Navbar extends Component {
 
   render() {
     return (
-      <nav className="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
-        <a
-          className="navbar-brand col-sm-3 col-md-2 mr-0"
-          href="https://en.wikipedia.org/wiki/Self-service"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          NFT Surreal
-        </a>
-        <ul className="navbar-nav px-3">
-          <li className="nav-item text-nowrap d-none d-sm-none d-sm-block">
-            <small className="text-secondary">
+      <header id="header" class="fixed-top header-scrolled">
+      <div class="container d-flex align-items-center">
+  
+        <h1 class="logo me-auto"><a href="index.html">R2 Produções</a></h1>
+  
+        <nav id="navbar" class="navbar">
+          <ul>
+            <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+            <li><a class="nav-link scrollto" href="#about">Comprar NFT</a></li>
+            <li><a class="nav-link scrollto" href="#why-us">Ranking</a></li>
+            <li><a class="nav-link  scrollto" href="#skills">Evento</a></li>
+            <li class="ml-5">
               {
                 this.props.account ?
                 <small id="account" className='text-white'>{this.props.account}</small> :
                 <button onClick={this.props.startWeb3} className="btn btn-warning">Connect Wallet</button>
-              }
-            </small>
-          </li>
-        </ul>
-      </nav>
+              }  
+            </li>
+          </ul>
+          <i class="bi bi-list mobile-nav-toggle"></i>
+        </nav>
+        {/* <!-- .navbar --> */}
+  
+      </div>
+    </header>
     );
   }
 }
 
 export default Navbar;
+
+        // {/* <!-- ======= Header ======= --> */}
+        // <header id="header" class="fixed-top ">
+        //   <div class="container d-flex align-items-center">
+      
+        //     <h1 class="logo me-auto"><a href="index.html">R2 Produções</a></h1>
+      
+        //     <nav id="navbar" class="navbar">
+        //       <ul>
+        //         <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+        //         <li><a class="nav-link scrollto" href="#about">Comprar NFT</a></li>
+        //         <li><a class="nav-link scrollto" href="#why-us">Ranking</a></li>
+        //         <li><a class="nav-link   scrollto" href="#skills">Evento</a></li>
+        //         <li>
+        //           {
+        //             this.props.account ?
+        //             <small id="account" className='text-white'>{this.props.account}</small> :
+        //             <button onClick={this.props.startWeb3} className="btn btn-warning">Connect Wallet</button>
+        //           }  
+        //         </li>
+        //       </ul>
+        //       <i class="bi bi-list mobile-nav-toggle"></i>
+        //     </nav>
+        //     {/* <!-- .navbar --> */}
+      
+        //   </div>
+        // </header>
+        // {/* <!-- End Header --> */}

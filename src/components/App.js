@@ -5,6 +5,7 @@ import NFTicket from '../abis/NFTicket.json'
 import Navbar from './Navbar'
 import NFTGallery from './NFTGallery'
 import Marketplace from './Marketplace'
+import Main from './Main'
 
 const baseIPFS = 'https://gateway.pinata.cloud/ipfs/QmULbt2g6DRGwhtY1ntwE9wdw7f7dteZfkxefUrhom3aid/'
 const mintPrice = 10000000000000000
@@ -110,6 +111,7 @@ class App extends Component {
               <NFTGallery
                 accountSNFTs={this.state.accountSNFTs}
               />
+              {/* <Main /> */}
             </div>
         }
       </div>

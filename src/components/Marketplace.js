@@ -19,7 +19,7 @@ class Marketplace extends Component {
                         </button>
                     </div>
                 </div>
-                <div class="col-lg-6 h-100 order-0 order-lg-1">
+                <div class="col-lg-6 h-100 order-0 order-lg-1 mt-5">
                     <Carousel>
                         <Carousel.Item>
                             <img
