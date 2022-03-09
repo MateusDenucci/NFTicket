@@ -63,12 +63,13 @@ class App extends Component {
   }
 
   mintNFT = () => {
+    let imageURI = baseIPFS + (parseInt(this.state.totalSuply) + 1) + '.png'
     this.state.nfTicket.methods.mint(
       this.state.account,
-      (baseIPFS + (parseInt(this.state.totalSuply) + 1) + '.png')
+      imageURI
     ).send({ from: this.state.account, value: mintPrice}).on('transactionHash', (hash) => {
       this.setState({ loading: false })
-      // this.setState({'accountSNFTs': [...this.state.accountSNFTs, img_url]})
+      this.setState({'accountSNFTs': [...this.state.accountSNFTs, imageURI]})
     }).catch((e) => {
       if(e.code === 4001){
         alert('Transaction rejected')
