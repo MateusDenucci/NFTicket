@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import './Marketplace.css';
+import { Carousel } from 'react-bootstrap';
+// import photo from '../photo.png';
+
 
 class Marketplace extends Component {
 
@@ -17,7 +20,29 @@ class Marketplace extends Component {
                     </div>
                 </div>
                 <div class="col-lg-6 h-100 order-0 order-lg-1">
-                <img className='display_width' src="https://gateway.pinata.cloud/ipfs/QmNm24sHPNU2tztD21t4mSQz73VMNHGr19Mp9XuFHKsyK1"  />
+                    <Carousel>
+                        <Carousel.Item>
+                            <img
+                            className="d-block w-100"
+                            src="https://gateway.pinata.cloud/ipfs/QmULbt2g6DRGwhtY1ntwE9wdw7f7dteZfkxefUrhom3aid/10.png"
+                            alt="First slide"
+                            />
+                        </Carousel.Item>
+                        <Carousel.Item >
+                            <img
+                            className="d-block w-100"
+                            src="https://gateway.pinata.cloud/ipfs/QmULbt2g6DRGwhtY1ntwE9wdw7f7dteZfkxefUrhom3aid/5.png"
+                            alt="Second slide"
+                            />
+                        </Carousel.Item>
+                        <Carousel.Item>
+                            <img
+                            className="d-block w-100"
+                            src="https://gateway.pinata.cloud/ipfs/QmULbt2g6DRGwhtY1ntwE9wdw7f7dteZfkxefUrhom3aid/2.png"
+                            alt="Third slide"
+                            />
+                        </Carousel.Item>
+                    </Carousel>
                 </div>
             </div>
         </div>

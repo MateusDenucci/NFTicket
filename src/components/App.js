@@ -6,7 +6,7 @@ import Navbar from './Navbar'
 import NFTGallery from './NFTGallery'
 import Marketplace from './Marketplace'
 
-const baseIPFS = 'https://gateway.pinata.cloud/ipfs/Qmch4oTFQXsQirstxXsbCqTkrg1RFqYaSfDnL1nE1zrHVv/'
+const baseIPFS = 'https://gateway.pinata.cloud/ipfs/QmULbt2g6DRGwhtY1ntwE9wdw7f7dteZfkxefUrhom3aid/'
 const mintPrice = 10000000000000000
 
 class App extends Component {
