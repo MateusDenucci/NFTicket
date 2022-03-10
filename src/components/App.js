@@ -19,7 +19,7 @@ class App extends Component {
   }
 
   async componentWillMount() {
-    this.startWeb3()
+
   }
 
   async loadWeb3() {
@@ -56,7 +56,6 @@ class App extends Component {
       for(let i = 0; i < accountBalance; i++){
         let id = await nfTicket.methods.tokenOfOwnerByIndex(accounts[0], i).call()
         let accountSNFT = await nfTicket.methods.tokenURI(id).call()
-        console.log(accountSNFT);
         this.setState({'accountSNFTs': [...this.state.accountSNFTs, accountSNFT]})
       }
 
@@ -68,9 +67,16 @@ class App extends Component {
     }else{
       alert('Wrong network')
     }
+    console.log(window.web3);
+    console.log(typeof(window.web3));
   }
 
   mintNFT = () => {
+    if (this.state.account == ''){
+        this.startWeb3()
+        return false
+    }
+
     let imageURI = baseIPFS + (parseInt(this.state.totalSuply) + 1) + '.png'
     this.state.nfTicket.methods.mint(
       this.state.account,
@@ -106,20 +112,15 @@ class App extends Component {
     return (
       <div>
         <Navbar account={this.state.account} startWeb3={this.startWeb3}/>
-        { this.state.loading
-          ? <div id="loader" className="text-center mt-5"><p>Loading...</p></div>
-          : <div>
-              <Hero />
-              <main id="main">
-                <Marketplace mintNFT={this.mintNFT} />
-                <NFTGallery
-                  accountSNFTs={this.state.accountSNFTs}
-                />
-                <Event />
-              </main>
-              <Footer />
-            </div>
-        }
+        <Hero />
+        <main id="main">
+          <Marketplace mintNFT={this.mintNFT} />
+          <NFTGallery
+            accountSNFTs={this.state.accountSNFTs}
+          />
+          <Event />
+        </main>
+        <Footer />
       </div>
     );
   }

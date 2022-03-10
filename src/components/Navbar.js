@@ -4,26 +4,26 @@ class Navbar extends Component {
 
   render() {
     return (
-      <header id="header" class="fixed-top header-scrolled">
-      <div class="container d-flex align-items-center">
+      <header id="header" className="fixed-top header-scrolled">
+      <div className="container d-flex align-items-center">
   
-        <h1 class="logo me-auto"><a href="index.html">R2 Produções</a></h1>
+        <h1 className="logo me-auto"><a href="index.html">R2 Produções</a></h1>
   
-        <nav id="navbar" class="navbar">
+        <nav id="navbar" className="navbar">
           <ul>
-            <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-            <li><a class="nav-link scrollto" href="#buyNFT">Comprar NFT</a></li>
-            <li><a class="nav-link scrollto" href="#myNFT">Meus NFT</a></li>
-            <li><a class="nav-link  scrollto" href="#event">Evento</a></li>
-            <li class="ml-5">
+            <li><a className="nav-link scrollto active" href="#hero">Home</a></li>
+            <li><a className="nav-link scrollto" href="#buyNFT">Comprar NFT</a></li>
+            <li><a className="nav-link scrollto" href="#myNFT">Meus NFT</a></li>
+            <li><a className="nav-link  scrollto" href="#event">Evento</a></li>
+            <li className="ml-5">
               {
                 this.props.account ?
                 <small id="account" className='text-white'>{this.props.account}</small> :
-                <a onClick={this.props.startWeb3} className="getstarted text-white btn" href='#'>Conectar Carteira</a>
+                <a onClick={this.props.startWeb3} className="getstarted text-white btn" href='javascript:void(0)'>Conectar Carteira</a>
               }  
             </li>
           </ul>
-          <i class="bi bi-list mobile-nav-toggle"></i>
+          <i className="bi bi-list mobile-nav-toggle"></i>
         </nav>
         {/* <!-- .navbar --> */}
   
