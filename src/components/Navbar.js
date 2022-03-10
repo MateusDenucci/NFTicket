@@ -19,7 +19,7 @@ class Navbar extends Component {
               {
                 this.props.account ?
                 <small id="account" className='text-white'>{this.props.account}</small> :
-                <a onClick={this.props.startWeb3} className="getstarted text-white btn" href='javascript:void(0)'>Conectar Carteira</a>
+                <button onClick={this.props.startWeb3} className="getstarted text-white btn">Conectar Carteira</button>
               }  
             </li>
           </ul>

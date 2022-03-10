@@ -39,7 +39,7 @@ class Marketplace extends Component {
                     <div class="col-lg-6 pt-4 pt-lg-0 content" data-aos="fade-left" data-aos-delay="100">
                         <h3>Faça parte desse clube exclusivo e tenha várias vantagens.</h3>
                         <p class="fst-italic">
-                            Custo de 0,01 ETH + Gas Fee. Não sabe o que essas palavras significam ou como comprar? <a href="#">Clique aqui e aprenda</a>
+                            Custo de 0,01 ETH + Gas Fee. Não sabe o que essas palavras significam ou como comprar? <a href="https://r2.com.vc/">Clique aqui e aprenda</a>
                         </p>
                         <div class="d-flex justify-content-center">
                             <button type="button" onClick={this.props.mintNFT} class="text-uppercase mt-5 btn btn-success">

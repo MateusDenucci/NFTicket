@@ -72,7 +72,7 @@ class App extends Component {
   }
 
   mintNFT = () => {
-    if (this.state.account == ''){
+    if (this.state.account === ''){
         this.startWeb3()
         return false
     }
