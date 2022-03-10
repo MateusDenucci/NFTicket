@@ -15,20 +15,18 @@ const mintPrice = 10000000000000000
 class App extends Component {
   async startWeb3() {
     await this.loadWeb3()
+    await window.ethereum.enable()
     await this.loadBlockchainData()
   }
 
   async componentWillMount() {
-
+    await this.loadWeb3()
+    await this.loadBlockchainData()
   }
 
   async loadWeb3() {
     if (window.ethereum) {
       window.web3 = new Web3(window.ethereum)
-      await window.ethereum.enable()
-    }
-    else if (window.web3) {
-      window.web3 = new Web3(window.web3.currentProvider)
     }
     else {
       window.alert('Non-Ethereum browser detected. You should consider trying MetaMask!')
@@ -38,37 +36,37 @@ class App extends Component {
   async loadBlockchainData() {
     const web3 = window.web3
     const accounts = await web3.eth.getAccounts()
-    this.setState({'account': accounts[0]})
+    if(accounts.length > 0 ){
+      this.setState({'account': accounts[0]})
 
-    const networkId = await web3.eth.net.getId()
-    const networkData = NFTicket.networks[networkId]
-    if(networkData || networkId === 4){
-      let nfTicket = 0
-      if(networkId === 4){
-        nfTicket = new web3.eth.Contract(NFTicket.abi, '0x2d010e127ce8688fc3c827c5ba08664d96f32573')
+      const networkId = await web3.eth.net.getId()
+      const networkData = NFTicket.networks[networkId]
+      if(networkData || networkId === 4){
+        let nfTicket = 0
+        if(networkId === 4){
+          nfTicket = new web3.eth.Contract(NFTicket.abi, '0x2d010e127ce8688fc3c827c5ba08664d96f32573')
+        }else{
+          nfTicket = new web3.eth.Contract(NFTicket.abi, networkData.address)
+        }
+        
+        this.setState({nfTicket})
+
+        let accountBalance = await nfTicket.methods.balanceOf(this.state.account).call()
+        for(let i = 0; i < accountBalance; i++){
+          let id = await nfTicket.methods.tokenOfOwnerByIndex(accounts[0], i).call()
+          let accountSNFT = await nfTicket.methods.tokenURI(id).call()
+          this.setState({'accountSNFTs': [...this.state.accountSNFTs, accountSNFT]})
+        }
+
+        let totalSuply = await nfTicket.methods.totalSupply().call()
+        this.setState({totalSuply})
+
+        this.setState({'loading': false})
+
       }else{
-        nfTicket = new web3.eth.Contract(NFTicket.abi, networkData.address)
+        alert('Wrong network')
       }
-      
-      this.setState({nfTicket})
-
-      let accountBalance = await nfTicket.methods.balanceOf(this.state.account).call()
-      for(let i = 0; i < accountBalance; i++){
-        let id = await nfTicket.methods.tokenOfOwnerByIndex(accounts[0], i).call()
-        let accountSNFT = await nfTicket.methods.tokenURI(id).call()
-        this.setState({'accountSNFTs': [...this.state.accountSNFTs, accountSNFT]})
-      }
-
-      let totalSuply = await nfTicket.methods.totalSupply().call()
-      this.setState({totalSuply})
-
-      this.setState({'loading': false})
-
-    }else{
-      alert('Wrong network')
     }
-    console.log(window.web3);
-    console.log(typeof(window.web3));
   }
 
   mintNFT = () => {
