@@ -16,21 +16,21 @@ class Marketplace extends Component {
                             <Carousel.Item>
                                 <img
                                 className="d-block w-100"
-                                src="https://gateway.pinata.cloud/ipfs/QmULbt2g6DRGwhtY1ntwE9wdw7f7dteZfkxefUrhom3aid/10.png"
+                                src="images/10.png"
                                 alt="First slide"
                                 />
                             </Carousel.Item>
                             <Carousel.Item >
                                 <img
                                 className="d-block w-100"
-                                src="https://gateway.pinata.cloud/ipfs/QmULbt2g6DRGwhtY1ntwE9wdw7f7dteZfkxefUrhom3aid/5.png"
+                                src="images/2.png"
                                 alt="Second slide"
                                 />
                             </Carousel.Item>
                             <Carousel.Item>
                                 <img
                                 className="d-block w-100"
-                                src="https://gateway.pinata.cloud/ipfs/QmULbt2g6DRGwhtY1ntwE9wdw7f7dteZfkxefUrhom3aid/2.png"
+                                src="images/1.png"
                                 alt="Third slide"
                                 />
                             </Carousel.Item>
