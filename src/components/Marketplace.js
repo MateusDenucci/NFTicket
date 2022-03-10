@@ -8,7 +8,7 @@ class Marketplace extends Component {
 
   render() {
     return (
-        <section id="buyNFT" class="skills">
+        <section id="buyNFT">
             <div class="container" data-aos="fade-up">
                 <div class="row">
                     <div class="col-lg-6 d-flex align-items-center" data-aos="fade-right" data-aos-delay="100">
@@ -43,9 +43,9 @@ class Marketplace extends Component {
                             magna aliqua.
                         </p>
                         <div class="d-flex justify-content-center">
-                        <button type="button" onClick={this.props.mintNFT} class="text-uppercase mt-5 btn btn-success">
-                            Comprar NFT
-                        </button>
+                            <button type="button" onClick={this.props.mintNFT} class="text-uppercase mt-5 btn btn-success">
+                                Comprar NFT
+                            </button>
                         </div>
                     </div>
                 </div>
