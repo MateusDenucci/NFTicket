@@ -4,10 +4,10 @@ class Navbar extends Component {
 
   render() {
     return (
-      <header id="header" className="fixed-top header-scrolled">
+      <header id="header" className="fixed-top">
       <div className="container d-flex align-items-center">
   
-        <h1 className="logo me-auto"><a href="index.html">R2 Produções</a></h1>
+        <h1 className="logo me-auto"><span className="text-white">R2 Produções</span></h1>
   
         <nav id="navbar" className="navbar">
           <ul>
@@ -25,7 +25,6 @@ class Navbar extends Component {
           </ul>
           <i className="bi bi-list mobile-nav-toggle"></i>
         </nav>
-        {/* <!-- .navbar --> */}
   
       </div>
     </header>
