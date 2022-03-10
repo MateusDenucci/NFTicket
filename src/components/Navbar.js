@@ -14,7 +14,7 @@ class Navbar extends Component {
             <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
             <li><a class="nav-link scrollto" href="#buyNFT">Comprar NFT</a></li>
             <li><a class="nav-link scrollto" href="#myNFT">Meus NFT</a></li>
-            <li><a class="nav-link  scrollto" href="#skills">Evento</a></li>
+            <li><a class="nav-link  scrollto" href="#event">Evento</a></li>
             <li class="ml-5">
               {
                 this.props.account ?
