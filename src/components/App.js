@@ -7,6 +7,7 @@ import NFTGallery from './NFTGallery'
 import Marketplace from './Marketplace'
 import Hero from './Hero'
 import Event from './Event'
+import Footer from './Footer';
 
 const baseIPFS = 'https://gateway.pinata.cloud/ipfs/QmULbt2g6DRGwhtY1ntwE9wdw7f7dteZfkxefUrhom3aid/'
 const mintPrice = 10000000000000000
@@ -116,6 +117,7 @@ class App extends Component {
                 />
                 <Event />
               </main>
+              <Footer />
             </div>
         }
       </div>
