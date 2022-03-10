@@ -5,13 +5,13 @@ class NFTGallery extends Component {
   render() {
     return (
       <section id="myNFT" className='section-bg'>
-        <div class="container" data-aos="fade-up" >
+        <div className="container" data-aos="fade-up" >
 
-          <div class="section-title">
+          <div className="section-title">
             <h2>Meus NFT</h2>
           </div>
 
-          <div class="d-flex justify-content-center container mt-2">
+          <div className="d-flex justify-content-center container mt-2">
             <div className="row">
                 { this.props.accountSNFTs.map((accountSNFT, key) => {
                   return(

@@ -5,8 +5,8 @@ class Footer extends Component {
   render() {
     return (
         <footer id="footer">
-            <div class="container footer-bottom clearfix">
-                <div class="copyright">
+            <div className="container footer-bottom clearfix">
+                <div className="copyright">
                     &copy; Copyright. All Rights Reserved
                 </div>
             </div>
