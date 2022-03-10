@@ -12,8 +12,8 @@ class Navbar extends Component {
         <nav id="navbar" class="navbar">
           <ul>
             <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-            <li><a class="nav-link scrollto" href="#about">Comprar NFT</a></li>
-            <li><a class="nav-link scrollto" href="#why-us">Ranking</a></li>
+            <li><a class="nav-link scrollto" href="#buyNFT">Comprar NFT</a></li>
+            <li><a class="nav-link scrollto" href="#why-us">Meus NFT</a></li>
             <li><a class="nav-link  scrollto" href="#skills">Evento</a></li>
             <li class="ml-5">
               {

@@ -12,7 +12,7 @@ class Hero extends Component {
                 <h1>NFT Surreal</h1>
                 <h2>Além do seu ingresso, NFTs surreais garantem benefícios exclusivos.</h2>
                 <div class="d-flex justify-content-center justify-content-lg-start">
-                  <a href="#about" class="btn-get-started scrollto">Comprar NFT</a>
+                  <a href="#buyNFT" class="btn-get-started scrollto">Comprar NFT</a>
                 </div>
               </div>
               <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="200">

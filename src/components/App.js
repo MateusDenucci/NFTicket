@@ -108,10 +108,12 @@ class App extends Component {
           ? <div id="loader" className="text-center mt-5"><p>Loading...</p></div>
           : <div>
               <Hero />
-              <Marketplace mintNFT={this.mintNFT} />
-              <NFTGallery
-                accountSNFTs={this.state.accountSNFTs}
-              />
+              <main id="main">
+                <Marketplace mintNFT={this.mintNFT} />
+                <NFTGallery
+                  accountSNFTs={this.state.accountSNFTs}
+                />
+              </main>
             </div>
         }
       </div>
