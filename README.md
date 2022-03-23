@@ -1,1 +1,2 @@
 # NFTicks
+Just a prototype (:
